@@ -44,9 +44,19 @@ body {
 
   .pizza-item {
     max-width: 250px;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
     border-radius: 7px;
     background-color: #e9e9e9;
     padding: 0.7rem;
+    padding-bottom: 1.5rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+      margin: 0 1rem;
+    }
 
     @media only screen and (min-width: 500px) {
       & {
@@ -61,12 +71,28 @@ body {
       border-radius: 7px;
       background-color: #dadada;
     }
+
     .pizza-name {
       padding: 1rem 0;
       font-size: 1rem;
+      flex-grow: 1;
+      max-width: 300px;
     }
+
+    .pizza-prices {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pizza-price-before {
+      text-decoration: line-through;
+      color: #a2a1a1;
+    }
+
     .pizza-price {
-      font-weight: 600;
+      font-size: 1.3rem;
+      font-weight: bold;
     }
   }
 }
