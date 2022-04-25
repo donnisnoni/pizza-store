@@ -37,7 +37,7 @@
     </div>
   </div>
 
-  <div class="cart">
+  <div class="cart-wrapper">
     <h2>Cart</h2>
   </div>
 </div>
