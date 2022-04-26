@@ -145,6 +145,48 @@ body {
       max-width: 400px;
     }
   }
+
+  .pizza-cart-item {
+    display: flex;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+
+    img:first-child {
+      width: 30%;
+      height: auto;
+      padding: 0.1rem 1rem;
+      background-color: #dadada;
+    }
+
+    .pizza-name {
+      padding: 0.4rem 0;
+      font-weight: normal;
+      font-size: 0.85rem;
+      flex-grow: 1;
+      max-width: 300px;
+    }
+
+    .pizza-topings {
+      font-size: 0.7rem;
+      margin-bottom: 5px;
+    }
+
+    .pizza-prices {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pizza-price-before {
+      font-size: 0.7rem;
+      text-decoration: line-through;
+      color: #a2a1a1;
+    }
+    .pizza-price {
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+  }
 }
 
 .text-center {

@@ -1,5 +1,7 @@
 <script>
   import Item from "./components/Item.svelte";
+  import CartItem from "./components/CartItem.svelte";
+  import { carts } from "./stores/Carts";
 
   let pizzas = [
     {
@@ -33,6 +35,11 @@
       img: "meatballpizzathumbnail.png",
     },
   ];
+
+  function addToCart(pizza) {
+    pizza.topings = [];
+    carts.update((prevCarts) => [...prevCarts, pizza]);
+  }
 </script>
 
 <heading class="main-heading">
@@ -44,12 +51,17 @@
     <h2>Pizza List</h2>
     <div class="pizza-list">
       {#each pizzas as pizza}
-        <Item item={pizza} />
+        <Item item={pizza} on:add-to-cart={() => addToCart(pizza)} />
       {/each}
     </div>
   </div>
 
   <div class="cart-wrapper">
-    <h2>Cart</h2>
+    <h2>Cart ({$carts.length})</h2>
+    <div class="pizza-list">
+      {#each $carts as cart}
+        <CartItem item={cart} />
+      {/each}
+    </div>
   </div>
 </div>
