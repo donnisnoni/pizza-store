@@ -1,7 +1,10 @@
 <script>
   import Item from "./components/Item.svelte";
   import CartItem from "./components/CartItem.svelte";
+  import SelectTopingsModal from "./components/SelectTopingsModal.svelte";
   import { carts } from "./stores/Carts";
+
+  let selectTopingModal;
 
   let pizzas = [
     {
@@ -37,8 +40,9 @@
   ];
 
   function addToCart(pizza) {
-    pizza.topings = [];
-    carts.update((prevCarts) => [...prevCarts, pizza]);
+    selectTopingModal.open();
+    // pizza.topings = [];
+    // carts.update((prevCarts) => [...prevCarts, pizza]);
   }
 </script>
 
@@ -64,4 +68,6 @@
       {/each}
     </div>
   </div>
+
+  <SelectTopingsModal bind:this={selectTopingModal} />
 </div>
