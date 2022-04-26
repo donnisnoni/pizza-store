@@ -65,12 +65,12 @@ body {
     padding-bottom: 1.5rem;
     transition: all 0.2s ease;
     max-width: 330px;
+    overflow: auto;
 
     img:first-child {
       width: 100%;
       height: auto;
       padding: 0 4rem;
-      border-radius: var(--border-radius);
       background-color: #dadada;
     }
 
@@ -108,7 +108,7 @@ body {
   border-radius: var(--border-radius);
   margin: 0 1rem;
   flex-basis: 100%;
-  
+
   @media screen and (min-width: 1300px) {
     & {
       margin: initial;
