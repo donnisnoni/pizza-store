@@ -20,6 +20,18 @@
       price: 15,
       img: "meatballpizzathumbnail.png",
     },
+    {
+      name: "Cheesy Meatball Blast",
+      discountPrice: 0,
+      price: 15,
+      img: "meatballpizzathumbnail.png",
+    },
+    {
+      name: "Cheesy Meatball Blast",
+      discountPrice: 0,
+      price: 15,
+      img: "meatballpizzathumbnail.png",
+    },
   ];
 </script>
 
@@ -28,7 +40,7 @@
 </heading>
 
 <div class="pizza-store-main">
-  <div class="pizza-list-container">
+  <div class="pizza-list-wrapper">
     <h2>Pizza List</h2>
     <div class="pizza-list">
       {#each pizzas as pizza}
