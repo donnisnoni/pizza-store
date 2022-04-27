@@ -62,6 +62,10 @@ body {
   }
 }
 
+.pizza-list-wrapper {
+  flex-grow: 1;
+}
+
 .pizza-list {
   margin-top: 1rem;
   display: flex;
