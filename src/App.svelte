@@ -101,3 +101,7 @@
     on:add-to-chart={addToCart}
   />
 </div>
+
+<footer class="footer">
+  Developed with ❤️  by <a target="_blank" href="https://github.com/donnisnoni">Don Alfons Nisnoni</a>
+</footer>
