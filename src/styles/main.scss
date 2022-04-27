@@ -155,9 +155,10 @@ body {
   margin: 0 1rem;
   flex-basis: 100%;
   min-height: 600px;
+  max-height: 80vh;
 
   .pizza-list {
-    margin-bottom: 100px;
+    margin-bottom: 20px;
     gap: 0.5rem;
   }
 
