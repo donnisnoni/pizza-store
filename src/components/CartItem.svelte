@@ -7,18 +7,14 @@
   <div class="pizza-name-and-price-wrapper">
     <h3 class="pizza-name">{item.name}</h3>
     <div class="pizza-topings">
-      {#if !item.topings.length}
-        No topings
-      {:else}
-        <!--  -->
-      {/if}
+      {item.topings.map((toping) => toping.label).join(", ")}
     </div>
     <div class="pizza-prices">
-      {#if item.discountPrice}
-        <div class="pizza-price-before">${item.price}</div>
-      {/if}
       <div class="pizza-price">
-        ${item.discountPrice ? item.discountPrice : item.price}
+        ${item.discountPrice
+          ? item.discountPrice +
+            item.topings.reduce((a, b) => a.price + b.price)
+          : item.price}
       </div>
     </div>
   </div>

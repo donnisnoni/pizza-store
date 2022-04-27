@@ -39,10 +39,17 @@
     },
   ];
 
-  function addToCart(pizza) {
+  let currentSelectedPizza = null;
+
+  function selectTopings(pizza) {
+    currentSelectedPizza = pizza;
     selectTopingModal.open();
-    // pizza.topings = [];
-    // carts.update((prevCarts) => [...prevCarts, pizza]);
+  }
+
+  function addToCart({ detail: topings }) {
+    currentSelectedPizza.topings = topings;
+    carts.update((prevCarts) => [...prevCarts, currentSelectedPizza]);
+    selectTopingModal.close();
   }
 </script>
 
@@ -55,7 +62,7 @@
     <h2>Pizza List</h2>
     <div class="pizza-list">
       {#each pizzas as pizza}
-        <Item item={pizza} on:add-to-cart={() => addToCart(pizza)} />
+        <Item item={pizza} on:add-to-cart={() => selectTopings(pizza)} />
       {/each}
     </div>
   </div>
@@ -64,10 +71,13 @@
     <h2>Cart ({$carts.length})</h2>
     <div class="pizza-list">
       {#each $carts as cart}
-        <CartItem item={cart} />
+        <CartItem bind:item={cart} />
       {/each}
     </div>
   </div>
 
-  <SelectTopingsModal bind:this={selectTopingModal} />
+  <SelectTopingsModal
+    bind:this={selectTopingModal}
+    on:add-to-chart={addToCart}
+  />
 </div>
