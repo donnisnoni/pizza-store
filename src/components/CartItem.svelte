@@ -3,7 +3,7 @@
 
   $: totalTopingPrice = item.topings
     .map((toping) => toping.price)
-    .reduce((a, b) => a + b);
+    .reduce((a, b) => a + b, 0);
   $: pizzaPrice = item.discountPrice ? item.discountPrice : item.price;
 </script>
 

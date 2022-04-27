@@ -51,6 +51,11 @@
     carts.update((prevCarts) => [...prevCarts, currentSelectedPizza]);
     selectTopingModal.close();
   }
+
+  $: pizzaCartTotal = $carts
+    .map((pizza) => (!!pizza.discountPrice ? pizza.discountPrice : pizza.price))
+    .reduce((a, b) => a + b, 0);
+  $: topingsCartTotal = $carts.map((pizza) => pizza.topings.map((toping) => toping.price)).flat().reduce((a, b) => a + b, 0)
 </script>
 
 <heading class="main-heading">
@@ -73,6 +78,9 @@
       {#each $carts as cart}
         <CartItem item={cart} />
       {/each}
+    </div>
+    <div class="cart-total">
+      Total <span class="price">${pizzaCartTotal + topingsCartTotal}</span>
     </div>
   </div>
 
