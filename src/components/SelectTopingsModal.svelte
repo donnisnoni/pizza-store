@@ -22,12 +22,16 @@
       topings.find((toping) => toping.id === id)
     );
     emit("add-to-chart", [...selectedTopings]);
+    onClose();
+  }
+
+  function onClose() {
     selectedTopings = [];
     selectedTopingsId = [];
   }
 </script>
 
-<dialog class="select-topings-modal" bind:this={thisEl}>
+<dialog class="select-topings-modal" bind:this={thisEl} on:close={onClose}>
   <h2>Topings</h2>
 
   <div class="toping-list">
