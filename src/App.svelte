@@ -42,7 +42,7 @@
   let currentSelectedPizza = null;
 
   function selectTopings(pizza) {
-    currentSelectedPizza = pizza;
+    currentSelectedPizza = { ...pizza };
     selectTopingModal.open();
   }
 
