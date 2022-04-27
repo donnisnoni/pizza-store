@@ -174,11 +174,16 @@ body {
       background-color: #dadada;
     }
 
-    .pizza-name {
-      padding: 0.7rem 0 0.2rem 0;
-      font-weight: normal;
-      font-size: 0.85rem;
+    .pizza-name-and-price-wrapper {
+      padding-top: 0.7rem;
       flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .pizza-name {
+      font-size: 0.85rem;
       max-width: 300px;
     }
 
@@ -194,12 +199,8 @@ body {
       gap: 10px;
     }
 
-    .pizza-price-before {
-      font-size: 0.7rem;
-      text-decoration: line-through;
-      color: #a2a1a1;
-    }
     .pizza-price {
+      margin-left: auto;
       font-size: 0.8rem;
       font-weight: bold;
     }
