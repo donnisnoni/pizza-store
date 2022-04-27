@@ -151,8 +151,10 @@ body {
   flex-direction: column;
   margin: 0 1rem;
   flex-basis: 100%;
+  min-height: 600px;
 
   .pizza-list {
+    margin-bottom: 100px;
     gap: 0.5rem;
   }
 
