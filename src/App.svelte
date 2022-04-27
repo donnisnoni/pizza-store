@@ -26,16 +26,28 @@
       img: "meatballpizzathumbnail.png",
     },
     {
-      name: "Cheesy Meatball Blast",
+      name: "Arabic Beef Kebab",
       discountPrice: 0,
-      price: 15,
-      img: "meatballpizzathumbnail.png",
+      price: 3,
+      img: "beef_kebab_side.png",
     },
     {
-      name: "Cheesy Meatball Blast",
+      name: "Ultimate Cheese Melt",
       discountPrice: 0,
-      price: 15,
-      img: "meatballpizzathumbnail.png",
+      price: 6,
+      img: "ultimatecheesemeltnew.png",
+    },
+    {
+      name: "Chicken Dominator",
+      discountPrice: 0,
+      price: 5,
+      img: "chicken-dominator-550x550px.png",
+    },
+    {
+      name: "American All Star",
+      discountPrice: 0,
+      price: 2,
+      img: "american-allstar-550x550px.png",
     },
   ];
 
