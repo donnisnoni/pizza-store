@@ -1,9 +1,21 @@
-// @tailwind base;
-// @tailwind components;
-// @tailwind utilities;
-
 :root {
   --border-radius: 7px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius);
+  appearance: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+button:active,
+input[type="checkbox"]:active {
+  transform: scale(1.04);
 }
 
 * {
@@ -120,7 +132,6 @@ body {
       fill: #fff;
       border: none;
       border-radius: 100%;
-      z-index: 2;
 
       &:hover {
         background-color: rgb(107, 107, 207);
@@ -197,6 +208,11 @@ body {
   box-shadow: 1px 2px 5px #29222267;
   padding: 1rem;
 
+  &::backdrop {
+    background-color: #000;
+    opacity: 0.5;
+  }
+
   @media screen and (min-width: 855px) {
     & {
       max-width: 85%;
@@ -252,6 +268,17 @@ body {
   .toping-list-item-name {
     margin: 0 10px 0 5px;
   }
+}
+
+.modal-actions {
+  display: flex;
+  margin-top: 20px;
+}
+
+.add-to-cart-button-on-modal {
+  background-color: rgb(128, 128, 241);
+  color: #fff;
+  margin-left: auto;
 }
 
 .text-center {

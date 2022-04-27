@@ -77,4 +77,11 @@
       </div>
     {/each}
   </div>
+
+  <div class="modal-actions">
+    <button class="button-close-select-topings-modal" on:click={close}>
+      Close
+    </button>
+    <button class="add-to-cart-button-on-modal">Add to cart</button>
+  </div>
 </dialog>
