@@ -1,5 +1,10 @@
 <script>
   export let item;
+
+  $: totalTopingPrice = item.topings
+    .map((toping) => toping.price)
+    .reduce((a, b) => a + b);
+  $: pizzaPrice = item.discountPrice ? item.discountPrice : item.price;
 </script>
 
 <div class="pizza-cart-item">
@@ -11,10 +16,7 @@
     </div>
     <div class="pizza-prices">
       <div class="pizza-price">
-        ${item.discountPrice
-          ? item.discountPrice +
-            item.topings.reduce((a, b) => a.price + b.price)
-          : item.price}
+        ${totalTopingPrice + pizzaPrice}
       </div>
     </div>
   </div>
