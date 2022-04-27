@@ -71,7 +71,7 @@
     <h2>Cart ({$carts.length})</h2>
     <div class="pizza-list">
       {#each $carts as cart}
-        <CartItem bind:item={cart} />
+        <CartItem item={cart} />
       {/each}
     </div>
   </div>
