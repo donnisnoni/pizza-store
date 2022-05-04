@@ -7,7 +7,12 @@
 </script>
 
 <div class="pizza-item">
-  <img src="./images/{item.img}" alt={item.name} />
+  <img
+    src="./images/pizza-placeholder.png"
+    class="lazy"
+    data-src="./images/{item.img}"
+    alt={item.name}
+  />
   <div class="pizza-name-and-price-wrapper">
     <h3 class="pizza-name">{item.name}</h3>
     <div class="pizza-prices">
