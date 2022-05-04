@@ -43,15 +43,21 @@ body {
 }
 
 .pizza-store-main {
+  --padding: 0;
+  --max-width: calc(100% - 6rem);
+
   display: flex;
   flex-direction: column;
-  min-width: 95%;
-  max-width: 900px;
-  margin: 0 auto;
-  justify-content: center;
-  min-height: 80vh;
+  max-width: min(100% - var(--padding), var(--max-width));
+  margin-inline: auto;
 
-  @media only screen and (min-width: 1200px) {
+  @media screen and (min-width: 768px) {
+    & {
+      --padding: 7rem;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
     & {
       flex-direction: row;
     }
@@ -214,7 +220,8 @@ body {
       gap: 10px;
     }
 
-    .pizza-price {margin-left: auto;
+    .pizza-price {
+      margin-left: auto;
       font-size: 0.8rem;
       font-weight: bold;
     }
