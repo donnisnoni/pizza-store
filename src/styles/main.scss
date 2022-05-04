@@ -202,6 +202,21 @@ body {
     background-color: #e9e9e9;
     border-radius: var(--border-radius);
     width: 100%;
+    position: relative;
+
+    .btn-delete-pizza-cart-item {
+      background-color: #f83737;
+      color: #fff;
+      position: absolute;
+      padding: 5px;
+      right: 0;
+      border-radius: 0;
+      display: none;
+    }
+
+    &:hover .btn-delete-pizza-cart-item {
+      display: initial;
+    }
 
     img:first-child {
       width: 30%;

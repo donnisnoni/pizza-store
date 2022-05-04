@@ -46,8 +46,8 @@
   <div class="cart-wrapper">
     <h2>Cart ({$carts.length})</h2>
     <div class="pizza-list">
-      {#each $carts as cart}
-        <CartItem item={cart} />
+      {#each $carts as cart, index}
+        <CartItem {index} item={cart} />
       {/each}
     </div>
     <div class="cart-total">
