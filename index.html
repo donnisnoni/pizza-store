@@ -41,6 +41,9 @@
 
         lazyLoadHandler();
 
+        window.lazyload = lazyLoadHandler;
+
+        document.addEventListener("load", lazyload);
         document.addEventListener("scroll", lazyload);
         window.addEventListener("resize", lazyload);
         window.addEventListener("orientationChange", lazyload);
