@@ -68,6 +68,22 @@ body {
   }
 }
 
+.pizza-prices {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pizza-price-before {
+  text-decoration: line-through;
+  color: #a2a1a1;
+}
+
+.pizza-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
 .pizza-list-wrapper {
   flex-grow: 1;
 }
@@ -325,6 +341,16 @@ body {
 
 .text-center {
   text-align: center;
+}
+
+.pizza-img {
+  width: 100%;
+  max-width: 250px;
+  padding: 2rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
 }
 
 .footer {

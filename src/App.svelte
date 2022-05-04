@@ -1,23 +1,23 @@
-<script>
+<script lang="ts">
   import Item from "./components/Item.svelte";
   import CartItem from "./components/CartItem.svelte";
-  import SelectTopingsModal from "./components/SelectTopingsModal.svelte";
+  import PizzaDialog from "./components/PizzaDialog.svelte";
   import { carts } from "./stores/Carts";
   import pizzas from "./constants/Pizzas";
 
-  let selectTopingModal;
+  let pizzaDialog: PizzaDialog;
 
   let currentSelectedPizza = null;
 
-  function selectTopings(pizza) {
+  function openPizzaDialog(pizza) {
     currentSelectedPizza = { ...pizza };
-    selectTopingModal.open();
+    pizzaDialog.open(currentSelectedPizza);
   }
 
   function addToCart({ detail: topings }) {
     currentSelectedPizza.topings = topings;
     carts.update((prevCarts) => [...prevCarts, currentSelectedPizza]);
-    selectTopingModal.close();
+    pizzaDialog.close();
   }
 
   $: pizzaCartTotal = $carts
@@ -38,7 +38,7 @@
     <h2>Pizza List</h2>
     <div class="pizza-list">
       {#each pizzas as pizza}
-        <Item item={pizza} on:add-to-cart={() => selectTopings(pizza)} />
+        <Item item={pizza} on:add-to-cart={() => openPizzaDialog(pizza)} />
       {/each}
     </div>
   </div>
@@ -55,10 +55,7 @@
     </div>
   </div>
 
-  <SelectTopingsModal
-    bind:this={selectTopingModal}
-    on:add-to-chart={addToCart}
-  />
+  <PizzaDialog bind:this={pizzaDialog} on:add-to-chart={addToCart} />
 </div>
 
 <footer class="footer">
