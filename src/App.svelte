@@ -66,8 +66,11 @@
 
   $: pizzaCartTotal = $carts
     .map((pizza) => (!!pizza.discountPrice ? pizza.discountPrice : pizza.price))
-    .reduce((a, b) => a + b, 0);
-  $: topingsCartTotal = $carts.map((pizza) => pizza.topings.map((toping) => toping.price)).flat().reduce((a, b) => a + b, 0)
+    .reduce((pizzaA, pizzaB) => pizzaA + pizzaB, 0);
+  $: topingsCartTotal = $carts
+    .map((pizza) => pizza.topings.map((toping) => toping.price))
+    .flat()
+    .reduce((pizzaA, pizzaB) => pizzaA + pizzaB, 0);
 </script>
 
 <heading class="main-heading">
@@ -103,5 +106,7 @@
 </div>
 
 <footer class="footer">
-  Developed with ❤️  by <a target="_blank" href="https://github.com/donnisnoni">Don Alfons Nisnoni</a>
+  Developed with ❤️ by <a target="_blank" href="https://github.com/donnisnoni">
+    Don Alfons Nisnoni
+  </a>
 </footer>
