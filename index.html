@@ -11,8 +11,46 @@
       rel="stylesheet"
     />
     <title>Pizza Store</title>
-    <script type="module" crossorigin src="https://donnisnoni.github.io/pizza-store/assets/index.e4a03719.js"></script>
-    <link rel="stylesheet" href="https://donnisnoni.github.io/pizza-store/assets/index.853f5cb1.css">
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        var lazyloadImages = document.querySelectorAll("img.lazy");
+        var lazyloadThrottleTimeout;
+
+        function lazyLoadHandler() {
+          lazyloadImages.forEach(function (img) {
+            const rect = img.getBoundingClientRect();
+            if (rect.bottom - rect.height <= window.innerHeight) {
+              img.src = img.dataset.src;
+              img.classList.remove("lazy");
+            }
+          });
+          if (lazyloadImages.length == 0) {
+            document.removeEventListener("scroll", lazyload);
+            window.removeEventListener("resize", lazyload);
+            window.removeEventListener("orientationChange", lazyload);
+          }
+        }
+
+        function lazyload() {
+          if (lazyloadThrottleTimeout) {
+            clearTimeout(lazyloadThrottleTimeout);
+          }
+
+          lazyloadThrottleTimeout = setTimeout(lazyLoadHandler, 20);
+        }
+
+        lazyLoadHandler();
+
+        window.lazyload = lazyLoadHandler;
+
+        document.addEventListener("load", lazyload);
+        document.addEventListener("scroll", lazyload);
+        window.addEventListener("resize", lazyload);
+        window.addEventListener("orientationChange", lazyload);
+      });
+    </script>
+    <script type="module" crossorigin src="https://donnisnoni.github.io/pizza-store/assets/index.2448ff79.js"></script>
+    <link rel="stylesheet" href="https://donnisnoni.github.io/pizza-store/assets/index.78c8ac2c.css">
   </head>
   <body>
     <div id="app"></div>
