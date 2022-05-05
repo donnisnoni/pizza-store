@@ -1,9 +1,10 @@
-<script>
+<script type="ts">
+  import type Pizza from "src/constants/Pizza";
   import { createEventDispatcher } from "svelte";
 
   const emit = createEventDispatcher();
 
-  export let item;
+  export let item: Pizza;
 </script>
 
 <div class="pizza-item">

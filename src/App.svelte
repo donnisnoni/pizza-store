@@ -4,12 +4,13 @@
   import PizzaDialog from "./components/PizzaDialog.svelte";
   import { carts } from "./stores/Carts";
   import pizzas from "./constants/Pizzas";
+  import type Pizza from "./constants/Pizza";
 
   let pizzaDialog: PizzaDialog;
 
-  let currentSelectedPizza = null;
+  let currentSelectedPizza: Pizza = null;
 
-  function openPizzaDialog(pizza) {
+  function openPizzaDialog(pizza: Pizza) {
     currentSelectedPizza = { ...pizza };
     pizzaDialog.open(currentSelectedPizza);
   }
@@ -23,6 +24,7 @@
   $: pizzaCartTotal = $carts
     .map((pizza) => (!!pizza.discountPrice ? pizza.discountPrice : pizza.price))
     .reduce((pizzaA, pizzaB) => pizzaA + pizzaB, 0);
+
   $: topingsCartTotal = $carts
     .map((pizza) => pizza.topings.map((toping) => toping.price))
     .flat()

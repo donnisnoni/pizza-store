@@ -1,12 +1,13 @@
-<script>
+<script lang="ts">
+  import type Pizza from "src/constants/Pizza";
   import { removeFromCart } from "../stores/Carts";
 
-  export let item;
-  export let index;
+  export let item: Pizza;
+  export let index: number;
 
   $: totalTopingPrice = item.topings
     .map((toping) => toping.price)
-    .reduce((a, b) => a + b, 0);
+    .reduce((topingA, topingB) => topingA + topingB, 0);
   $: pizzaPrice = item.discountPrice ? item.discountPrice : item.price;
 </script>
 

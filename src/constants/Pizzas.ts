@@ -1,4 +1,6 @@
-export default [
+import type Pizza from "./Pizza";
+
+const pizzas: Array<Pizza> = [
   {
     name: "American Classix Cheeseburger",
     discountPrice: 8,
@@ -42,3 +44,5 @@ export default [
     img: "american-allstar-550x550px.png",
   },
 ];
+
+export default pizzas;

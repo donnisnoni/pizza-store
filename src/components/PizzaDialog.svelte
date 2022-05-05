@@ -1,26 +1,29 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from "svelte";
   import topings from "../constants/Topings";
+  import type Pizza from "../constants/Pizza";
 
   const emit = createEventDispatcher();
 
-  let thisEl;
-  let pizza = {
+  let dialog: HTMLDialogElement;
+  let pizza: Pizza = {
     name: "",
     discountPrice: 0,
     price: 0,
     img: "",
   };
 
-  export let selectedTopingsId = [];
+  export let selectedTopingsId: Array<number> = [];
 
-  export function open(_pizza) {
+  export function open(_pizza: Pizza) {
     pizza = { ..._pizza };
-    thisEl.showModal();
+    // @ts-ignore
+    dialog.showModal();
   }
 
-  export function close() {
-    thisEl.close();
+  export function close(): void {
+    // @ts-ignore
+    dialog.close();
   }
 
   function addToCart() {
@@ -35,13 +38,14 @@
   $: selectedTopings = selectedTopingsId.map((id) =>
     topings.find((toping) => toping.id === id)
   );
+
   $: totalSelectedTopings = selectedTopings.reduce(
-    (topingA, topingB) => topingA + topingB.price,
+    (prevPrice, topingB) => prevPrice + topingB.price,
     0
   );
 </script>
 
-<dialog class="pizza-dialog" bind:this={thisEl} on:close={onClose}>
+<dialog class="pizza-dialog" bind:this={dialog} on:close={onClose}>
   <h2>{pizza.name}</h2>
 
   <img
