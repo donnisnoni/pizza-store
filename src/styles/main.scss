@@ -1,5 +1,24 @@
 :root {
   --border-radius: 7px;
+
+  // Colours
+  --clr-black: hsl(0, 0%, 0%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light-blue: hsl(240, 80%, 72%);
+  --clr-c64-purple: hsl(240, 51%, 62%);
+  --clr-cerebral-grey: hsl(0, 0%, 80%);
+  --clr-charmed-chalice: hsl(0, 1%, 63%);
+  --clr-whitesmoke: hsl(0, 0%, 96%);
+  --clr-snowbank: hsl(0, 0%, 91%);
+  --clr-porpoise: hsl(0, 0%, 85%);
+  --clr-gold-black: hsla(0, 9%, 15%, 0.4);
+  --clr-flamboyant: hsl(0, 93%, 59%);
+
+  // UI Colour Aliases
+  --box-shadow-clr: var(--clr-cerebral-grey);
+  --button-primary-bg-clr: var(--clr-light-blue);
+  --button-primary-hover-bg-clr: var(--clr-c64-purple);
+  --pizza-cart-hover-shadow-clr: var(--clr-gold-black);
 }
 
 button {
@@ -27,7 +46,7 @@ input[type="checkbox"]:active {
 body {
   font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color: #fff;
+  background-color: var(--clr-white);
   font-size: 1.05rem;
 
   @media screen and (min-width: 768px) {
@@ -38,7 +57,7 @@ body {
 .main-heading {
   display: block;
   padding: 1rem 1.5rem;
-  box-shadow: 0 1px 5px #ccc;
+  box-shadow: 0 1px 5px var(--box-shadow-clr);
   margin-bottom: 2rem;
 }
 
@@ -76,7 +95,7 @@ body {
 
 .pizza-price-before {
   text-decoration: line-through;
-  color: #a2a1a1;
+  color: var(--clr-charmed-chalice);
 }
 
 .pizza-price {
@@ -106,7 +125,7 @@ body {
     display: flex;
     flex-direction: column;
     border-radius: var(--border-radius);
-    background-color: #f5f5f5;
+    background-color: var(--clr-whitesmoke);
     padding-bottom: 1.5rem;
     transition: all 0.2s ease;
     max-width: 330px;
@@ -114,14 +133,14 @@ body {
     position: relative;
 
     &:hover {
-      box-shadow: 1px 2px 5px #29222267;
+      box-shadow: 1px 2px 5px var(--pizza-cart-hover-shadow-clr);
     }
 
     img:first-child {
       width: 100%;
       height: auto;
       padding: 0 4rem;
-      background-color: #dadada;
+      background-color: var(--clr-porpoise);
     }
 
     .pizza-name {
@@ -139,7 +158,7 @@ body {
 
     .pizza-price-before {
       text-decoration: line-through;
-      color: #a2a1a1;
+      color: var(--clr-charmed-chalice);
     }
 
     .pizza-price {
@@ -156,14 +175,14 @@ body {
       bottom: 20px;
       right: 20px;
       padding: 0.5rem;
-      background-color: rgb(128, 128, 241);
-      color: #fff;
-      fill: #fff;
+      background-color: var(--button-primary-bg-clr);
+      color: var(--clr-white);
+      fill: var(--clr-white);
       border: none;
       border-radius: 100%;
 
       &:hover {
-        background-color: rgb(107, 107, 207);
+        background-color: var(--button-primary-hover-bg-clr);
       }
     }
   }
@@ -174,7 +193,7 @@ body {
 }
 
 .cart-wrapper {
-  background-color: #f5f5f5;
+  background-color: var(--clr-whitesmoke);
   border-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
@@ -199,14 +218,14 @@ body {
   .pizza-cart-item {
     display: flex;
     overflow: hidden;
-    background-color: #e9e9e9;
+    background-color: var(--clr-snowbank);
     border-radius: var(--border-radius);
     width: 100%;
     position: relative;
 
     .btn-delete-pizza-cart-item {
-      background-color: #f83737;
-      color: #fff;
+      background-color: var(--clr-flamboyant);
+      color: var(--clr-white);
       position: absolute;
       padding: 5px;
       right: 0;
@@ -222,7 +241,7 @@ body {
       width: 30%;
       height: auto;
       padding: 0.1rem 1rem;
-      background-color: #dadada;
+      background-color: var(--clr-porpoise);
       max-width: 120px;
     }
 
@@ -241,7 +260,7 @@ body {
 
     .pizza-topings {
       font-size: 0.7rem;
-      color: #a2a1a1;
+      color: var(--clr-charmed-chalice);
       margin-bottom: 5px;
     }
 
@@ -266,7 +285,7 @@ body {
     font-weight: bold;
     padding: 1rem 1.5rem;
     border-radius: var(--border-radius);
-    background-color: #dadada;
+    background-color: var(--clr-porpoise);
 
     .price {
       margin-left: auto;
@@ -279,11 +298,11 @@ body {
   max-width: 90%;
   margin: 10vh auto;
   border: none;
-  box-shadow: 1px 2px 5px #29222267;
+  box-shadow: 1px 2px 5px var(--clr-gold-black);
   padding: 1rem;
 
   &::backdrop {
-    background-color: #000;
+    background-color: var(--clr-black, #000);
     opacity: 0.5;
   }
 
@@ -350,8 +369,8 @@ body {
 }
 
 .add-to-cart-button-on-modal {
-  background-color: rgb(128, 128, 241);
-  color: #fff;
+  background-color: var(--clr-light-blue);
+  color: var(--clr-white);
   margin-left: auto;
 }
 
@@ -373,5 +392,5 @@ body {
   text-align: center;
   margin-top: 5rem;
   padding: 2rem;
-  background-color: #f5f5f5;
+  background-color: var(--clr-whitesmoke);
 }
