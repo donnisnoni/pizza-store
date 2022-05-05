@@ -122,6 +122,8 @@ body {
   }
 
   .pizza-item {
+    --add-to-cart-button-position: 20px;
+
     flex-basis: 100%;
     display: flex;
     flex-direction: column;
@@ -130,11 +132,18 @@ body {
     padding-bottom: 1.5rem;
     transition: all 0.2s ease;
     max-width: 330px;
-    overflow: auto;
+    overflow: hidden;
     position: relative;
 
     &:hover {
       box-shadow: 1px 2px 5px var(--pizza-cart-hover-shadow-clr);
+    }
+
+    @media screen and (min-width: 1366px) {
+      &:hover .add-to-cart-button {
+        transition: bottom 0.1s ease-in;
+        bottom: var(--add-to-cart-button-position);
+      }
     }
 
     img:first-child {
@@ -173,7 +182,7 @@ body {
       justify-content: center;
       align-items: center;
       position: absolute;
-      bottom: 20px;
+      bottom: var(--add-to-cart-button-position);
       right: 20px;
       padding: 0.5rem;
       background-color: var(--button-primary-bg-clr);
@@ -181,6 +190,12 @@ body {
       fill: var(--clr-white);
       border: none;
       border-radius: 100%;
+
+      @media screen and (min-width: 1366px) {
+        & {
+          bottom: calc(-4% - 20px);
+        }
+      }
 
       &:hover {
         background-color: var(--button-primary-hover-bg-clr);
