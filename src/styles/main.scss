@@ -9,6 +9,7 @@
   --clr-cerebral-grey: hsl(0, 0%, 80%);
   --clr-charmed-chalice: hsl(0, 1%, 63%);
   --clr-whitesmoke: hsl(0, 0%, 96%);
+  --clr-white-edgar: hsl(0, 0%, 93%);
   --clr-snowbank: hsl(0, 0%, 91%);
   --clr-porpoise: hsl(0, 0%, 85%);
   --clr-gold-black: hsla(0, 9%, 15%, 0.4);
@@ -140,7 +141,7 @@ body {
       width: 100%;
       height: auto;
       padding: 0 4rem;
-      background-color: var(--clr-porpoise);
+      background-color: var(--clr-white-edgar);
     }
 
     .pizza-name {
@@ -241,7 +242,7 @@ body {
       width: 30%;
       height: auto;
       padding: 0.1rem 1rem;
-      background-color: var(--clr-porpoise);
+      background-color: var(--clr-white-edgar);
       max-width: 120px;
     }
 
@@ -285,7 +286,7 @@ body {
     font-weight: bold;
     padding: 1rem 1.5rem;
     border-radius: var(--border-radius);
-    background-color: var(--clr-porpoise);
+    background-color: var(--clr-white-edgar);
 
     .price {
       margin-left: auto;
