@@ -41,7 +41,7 @@
   );
 </script>
 
-<dialog class="select-topings-modal" bind:this={thisEl} on:close={onClose}>
+<dialog class="pizza-dialog" bind:this={thisEl} on:close={onClose}>
   <h2>{pizza.name}</h2>
 
   <img
@@ -83,9 +83,7 @@
   </div>
 
   <div class="modal-actions">
-    <button class="button-close-select-topings-modal" on:click={close}>
-      Cancel
-    </button>
+    <button on:click={close}>Cancel</button>
     <button class="add-to-cart-button-on-modal" on:click={addToCart}>
       Add to cart
     </button>
