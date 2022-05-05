@@ -144,6 +144,10 @@ body {
         transition: bottom 0.1s ease-in;
         bottom: var(--add-to-cart-button-position);
       }
+
+      .add-to-cart-button:is(:active, :focus) {
+        bottom: var(--add-to-cart-button-position);
+      }
     }
 
     img:first-child {
