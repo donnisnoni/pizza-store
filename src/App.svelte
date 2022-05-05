@@ -15,8 +15,9 @@
     pizzaDialog.open(currentSelectedPizza);
   }
 
-  function addToCart({ detail: topings }) {
-    currentSelectedPizza.topings = topings;
+  function addToCart({ detail }) {
+    currentSelectedPizza.topings = detail.topings;
+    currentSelectedPizza.amount = detail.amount;
     carts.update((prevCarts) => [...prevCarts, currentSelectedPizza]);
     pizzaDialog.close();
   }

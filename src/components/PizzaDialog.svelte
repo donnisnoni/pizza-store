@@ -2,6 +2,7 @@
   import { createEventDispatcher } from "svelte";
   import topings from "../constants/Topings";
   import type Pizza from "../constants/Pizza";
+  import AmountButton from "./AmountButton.svelte";
 
   const emit = createEventDispatcher();
 
@@ -12,6 +13,7 @@
     price: 0,
     img: "",
   };
+  let amount = 1;
 
   export let selectedTopingsId: Array<number> = [];
 
@@ -27,12 +29,13 @@
   }
 
   function addToCart() {
-    emit("add-to-chart", [...selectedTopings]);
+    emit("add-to-chart", { topings: selectedTopings, amount });
     onClose();
   }
 
   function onClose() {
     selectedTopingsId = [];
+    amount = 1;
   }
 
   $: selectedTopings = selectedTopingsId.map((id) =>
@@ -43,6 +46,12 @@
     (prevPrice, topingB) => prevPrice + topingB.price,
     0
   );
+
+  $: pizzaPriceBefore = (pizza.price + totalSelectedTopings) * amount;
+  $: pizzaRealPrice =
+    ((pizza.discountPrice ? pizza.discountPrice : pizza.price) +
+      totalSelectedTopings) *
+    amount;
 </script>
 
 <dialog class="pizza-dialog" bind:this={dialog} on:close={onClose}>
@@ -58,12 +67,11 @@
   <div class="pizza-prices">
     {#if pizza.discountPrice}
       <span class="pizza-price-before">
-        ${pizza.price + totalSelectedTopings}
+        ${pizzaPriceBefore.toFixed(1)}
       </span>
     {/if}
     <div class="pizza-price">
-      ${(pizza.discountPrice ? pizza.discountPrice : pizza.price) +
-        totalSelectedTopings}
+      ${pizzaRealPrice.toFixed(1)}
     </div>
   </div>
 
@@ -85,6 +93,10 @@
       </div>
     {/each}
   </div>
+
+  <h3 class="mt-1">Amount</h3>
+
+  <AmountButton bind:amount />
 
   <div class="modal-actions">
     <button on:click={close}>Cancel</button>

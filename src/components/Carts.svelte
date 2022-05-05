@@ -3,11 +3,15 @@
   import { carts } from "../stores/Carts";
 
   $: pizzaCartTotal = $carts
-    .map((pizza) => (!!pizza.discountPrice ? pizza.discountPrice : pizza.price))
+    .map((pizza) =>
+      !!pizza.discountPrice
+        ? pizza.discountPrice * pizza.amount
+        : pizza.price * pizza.amount
+    )
     .reduce((pizzaA, pizzaB) => pizzaA + pizzaB, 0);
 
   $: topingsCartTotal = $carts
-    .map((pizza) => pizza.topings.map((toping) => toping.price))
+    .map((pizza) => pizza.topings.map((toping) => toping.price * pizza.amount))
     .flat()
     .reduce((pizzaA, pizzaB) => pizzaA + pizzaB, 0);
 </script>

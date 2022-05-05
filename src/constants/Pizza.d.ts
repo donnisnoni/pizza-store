@@ -9,6 +9,10 @@ export default interface Pizza {
   price: number;
   /** The image of pizza */
   img: string;
+
+  //  Data used for cart
   /** The topings of pizza */
   topings?: Array<Toping>;
+  /** The topings of pizza */
+  amount?: number;
 }
