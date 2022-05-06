@@ -6,7 +6,7 @@
 
   const emit = createEventDispatcher();
 
-  let dialog: HTMLDialogElement;
+  let dialog: HTMLDialogElement | HTMLElement;
   let pizza: Pizza = {
     name: "",
     discountPrice: 0,
@@ -38,6 +38,13 @@
     amount = 1;
   }
 
+  function onClick(event: MouseEvent) {
+    // @ts-ignore
+    if (event.target.isSameNode(dialog)) {
+      close();
+    }
+  }
+
   $: selectedTopings = selectedTopingsId.map((id) =>
     topings.find((toping) => toping.id === id)
   );
@@ -54,7 +61,13 @@
     amount;
 </script>
 
-<dialog class="dialog-wrapper" bind:this={dialog} on:close={onClose}>
+<dialog
+  class="dialog-wrapper"
+  bind:this={dialog}
+  on:close={onClose}
+  on:cancel={onClose}
+  on:click={onClick}
+>
   <div class="dialog">
     <h2>{pizza.name}</h2>
 
