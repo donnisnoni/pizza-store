@@ -317,18 +317,43 @@ body {
   }
 }
 
-.pizza-dialog {
+.dialog-wrapper {
   width: 100%;
   max-width: 90%;
   margin: 10vh auto;
   border: none;
   box-shadow: 1px 2px 5px var(--clr-gold-black);
   border-radius: var(--border-radius);
-  padding: 1rem;
 
   &::backdrop {
     background-color: var(--clr-black, #000);
     opacity: 0.5;
+  }
+
+  .dialog {
+    display: flex;
+    flex-direction: column;
+    max-height: 60vh;
+
+    & > * {
+      padding-inline: 0.7rem;
+
+      &:first-child {
+        border-bottom: 1px solid var(--clr-white-edgar);
+        padding-block: 0.7rem;
+      }
+
+      &:last-child {
+        border-top: 1px solid var(--clr-white-edgar);
+        padding-block: 0.5rem;
+      }
+    }
+
+    .dialog-body {
+      overflow-y: auto;
+      padding-block: 1rem;
+      padding-inline: 1rem;
+    }
   }
 
   @media screen and (min-width: 855px) {
@@ -390,7 +415,6 @@ body {
 
 .modal-actions {
   display: flex;
-  margin-top: 20px;
 }
 
 .add-to-cart-button-on-modal {
