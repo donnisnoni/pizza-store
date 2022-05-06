@@ -31,6 +31,10 @@ button {
   padding: 10px 15px;
   text-transform: uppercase;
   user-select: none;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
 button:active,

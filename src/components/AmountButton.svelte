@@ -3,7 +3,9 @@
 </script>
 
 <div class="amount-button mt-1">
-  <button on:click={() => amount > 1 && amount--}>-</button>
+  <button on:click={() => amount > 1 && amount--} disabled={amount <= 1}>
+    -
+  </button>
   <div class="amount">{amount}</div>
   <button on:click={() => amount++}>+</button>
 </div>
