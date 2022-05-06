@@ -2,7 +2,7 @@
   export let amount: number = 1;
 </script>
 
-<div class="amount-button">
+<div class="amount-button mt-1">
   <button on:click={() => amount > 1 && amount--}>-</button>
   <div class="amount">{amount}</div>
   <button on:click={() => amount++}>+</button>
@@ -11,7 +11,6 @@
 <style lang="scss">
   .amount-button {
     display: inline-flex;
-    margin-top: 0.5rem;
 
     > * {
       width: 50px;
