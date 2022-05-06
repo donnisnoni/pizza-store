@@ -353,6 +353,8 @@ body {
       overflow-y: auto;
       padding-block: 1rem;
       padding-inline: 1rem;
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -431,6 +433,7 @@ body {
   width: 100%;
   max-width: 250px;
   padding: 2rem;
+  margin-inline: auto;
 }
 
 .mt-1 {
