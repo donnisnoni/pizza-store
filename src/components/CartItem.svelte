@@ -32,7 +32,7 @@
   <div class="pizza-name-and-price-wrapper">
     <h3 class="pizza-name">
       {item.name}
-      {#if item.amount}
+      {#if item.amount > 1}
         (x{item.amount})
       {/if}
     </h3>
