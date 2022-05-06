@@ -147,6 +147,8 @@ body {
       &:hover .add-to-cart-button {
         transition: bottom 0.1s ease-in;
         bottom: var(--add-to-cart-button-position);
+        animation: spin 0.5s forwards linear;
+        animation-delay: 0.09s;
       }
 
       .add-to-cart-button:is(:active, :focus) {
@@ -445,4 +447,13 @@ body {
   margin-top: 5rem;
   padding: 2rem;
   background-color: var(--clr-whitesmoke);
+}
+
+@keyframes spin {
+  25% {
+    transform: rotate(60deg) scale(0.9);
+  }
+  50% {
+    transform: rotate(0deg) scale(1.2);
+  }
 }
