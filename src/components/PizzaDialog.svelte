@@ -21,6 +21,7 @@
     pizza = { ..._pizza };
     // @ts-ignore
     dialog.showModal();
+    dialog.querySelector(".dialog-body").scrollTop = 0;
   }
 
   export function close(): void {
