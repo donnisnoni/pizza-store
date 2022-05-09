@@ -153,6 +153,7 @@ body {
 
       .add-to-cart-button:is(:active, :focus) {
         bottom: var(--add-to-cart-button-position);
+        animation: none;
       }
     }
 
