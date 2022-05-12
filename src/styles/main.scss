@@ -4,6 +4,7 @@
   // Colours
   --clr-black: hsl(0, 0%, 0%);
   --clr-white: hsl(0, 0%, 100%);
+  --clr-liliac: hsl(271, 81%, 76%);
   --clr-light-blue: hsl(240, 80%, 72%);
   --clr-c64-purple: hsl(240, 51%, 62%);
   --clr-cerebral-grey: hsl(0, 0%, 80%);
@@ -15,31 +16,27 @@
   --clr-gold-black: hsla(0, 9%, 15%, 0.4);
   --clr-flamboyant: hsl(0, 93%, 59%);
 
+  --clr-black-sheep: hsl(300, 12%, 5%);
+  --clr-dark-void: hsl(300, 12%, 8%);
+  --clr-black-halo: hsl(300, 11%, 11%);
+  --clr--light-black-halo: hsl(300, 11%, 14%);
+
+  --clr-alpha-gray: hsl(0deg 0% 100% / 8%);
+
   // UI Colour Aliases
   --box-shadow-clr: var(--clr-cerebral-grey);
   --button-primary-bg-clr: var(--clr-light-blue);
   --button-primary-hover-bg-clr: var(--clr-c64-purple);
   --pizza-cart-hover-shadow-clr: var(--clr-gold-black);
-}
+  --border-clr: var(--clr-white-edgar);
 
-button {
-  cursor: pointer;
-  border: none;
-  border-radius: var(--border-radius);
-  appearance: none;
-  font-weight: bold;
-  padding: 10px 15px;
-  text-transform: uppercase;
-  user-select: none;
-
-  &:disabled {
-    cursor: not-allowed;
+  @media (prefers-color-scheme: dark) {
+    --box-shadow-clr: var(--clr-alpha-gray);
+    --pizza-cart-hover-shadow-clr: var(--clr-alpha-gray);
+    --border-clr: var(--clr-black-halo);
+    // Rename this color later
+    --button-primary-bg-clr: hsl(300deg 11% 46%);
   }
-}
-
-button:active,
-input[type="checkbox"]:active {
-  transform: scale(1.04);
 }
 
 * {
@@ -57,6 +54,49 @@ body {
   @media screen and (min-width: 768px) {
     font-size: 1.1rem;
   }
+
+  @media (prefers-color-scheme: dark) {
+    & {
+      background-color: var(--clr-black-sheep);
+      color: var(--clr-white);
+    }
+  }
+}
+
+a {
+  @media (prefers-color-scheme: dark) {
+    color: var(--clr-liliac);
+  }
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius);
+  appearance: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  user-select: none;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--clr-black-halo);
+    color: var(--clr-white);
+
+    &:disabled {
+      color: grey !important;
+      pointer-events: none;
+    }
+  }
+}
+
+button:active,
+input[type="checkbox"]:active {
+  transform: scale(1.04);
 }
 
 .main-heading {
@@ -139,6 +179,10 @@ body {
     overflow: hidden;
     position: relative;
 
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--clr-black-halo);
+    }
+
     &:hover {
       box-shadow: 1px 2px 5px var(--pizza-cart-hover-shadow-clr);
     }
@@ -162,6 +206,10 @@ body {
       height: auto;
       padding: 0 4rem;
       background-color: var(--clr-white-edgar);
+
+      @media (prefers-color-scheme: dark) {
+        background-color: var(--clr-dark-void);
+      }
     }
 
     .pizza-name {
@@ -229,6 +277,10 @@ body {
   min-height: 600px;
   max-height: 80vh;
 
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--clr-black-halo);
+  }
+
   .pizza-list {
     margin-bottom: 20px;
     gap: 0.5rem;
@@ -250,6 +302,10 @@ body {
     width: 100%;
     position: relative;
 
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--clr--light-black-halo);
+    }
+
     .btn-delete-pizza-cart-item {
       background-color: var(--clr-flamboyant);
       color: var(--clr-white);
@@ -270,6 +326,10 @@ body {
       padding: 0.1rem 1rem;
       background-color: var(--clr-white-edgar);
       max-width: 120px;
+
+      @media (prefers-color-scheme: dark) {
+        background-color: var(--clr-dark-void);
+      }
     }
 
     .pizza-name-and-price-wrapper {
@@ -314,6 +374,10 @@ body {
     border-radius: var(--border-radius);
     background-color: var(--clr-white-edgar);
 
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--clr-dark-void);
+    }
+
     .price {
       margin-left: auto;
     }
@@ -328,6 +392,13 @@ body {
   box-shadow: 1px 2px 5px var(--clr-gold-black);
   border-radius: var(--border-radius);
 
+  @media (prefers-color-scheme: dark) {
+    & {
+      background-color: var(--clr-black-sheep);
+      color: var(--clr-white);
+    }
+  }
+
   &::backdrop {
     background-color: var(--clr-gold-black, hsla(0, 0%, 0%, 0.7));
   }
@@ -341,12 +412,12 @@ body {
       padding-inline: 0.7rem;
 
       &:first-child {
-        border-bottom: 1px solid var(--clr-white-edgar);
+        border-bottom: 1px solid var(--border-clr);
         padding-block: 0.7rem;
       }
 
       &:last-child {
-        border-top: 1px solid var(--clr-white-edgar);
+        border-top: 1px solid var(--border-clr);
         padding-block: 0.5rem;
       }
     }
@@ -447,6 +518,10 @@ body {
   margin-top: 5rem;
   padding: 2rem;
   background-color: var(--clr-whitesmoke);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--clr-black-halo);
+  }
 }
 
 @keyframes spin {

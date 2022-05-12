@@ -21,10 +21,20 @@
       align-items: center;
       justify-content: center;
       padding: 5px;
+
+      @media (prefers-color-scheme: dark) {
+        background-color: var(--clr-black-halo);
+      }
     }
 
     .amount {
       display: flex;
+    }
+
+    button {
+      @media (prefers-color-scheme: dark) {
+        color: var(--clr-white);
+      }
     }
 
     button:first-child {
