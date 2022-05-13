@@ -56,10 +56,8 @@ body {
   }
 
   @media (prefers-color-scheme: dark) {
-    & {
-      background-color: var(--clr-black-sheep);
-      color: var(--clr-white);
-    }
+    background-color: var(--clr-black-sheep);
+    color: var(--clr-white);
   }
 }
 
@@ -116,18 +114,14 @@ input[type="checkbox"]:active {
   margin-inline: auto;
 
   @media screen and (min-width: 768px) {
-    & {
-      --padding: 7rem;
-    }
+    --padding: 7rem;
   }
 
   @media screen and (min-width: 1200px) {
-    & {
-      flex-direction: row;
-    }
+    flex-direction: row;
   }
 
-  & > div {
+  > div {
     padding: 1rem 1.2rem;
   }
 }
@@ -160,9 +154,7 @@ input[type="checkbox"]:active {
   flex-wrap: wrap;
 
   @media screen and (min-width: 900px) {
-    & {
-      flex-direction: row;
-    }
+    flex-direction: row;
   }
 
   .pizza-item {
@@ -251,9 +243,7 @@ input[type="checkbox"]:active {
       border-radius: 100%;
 
       @media screen and (min-width: 1366px) {
-        & {
-          bottom: calc(-4% - 20px);
-        }
+        bottom: calc(-4% - 20px);
       }
 
       &:hover {
@@ -277,6 +267,11 @@ input[type="checkbox"]:active {
   min-height: 600px;
   max-height: 80vh;
 
+  @media screen and (min-width: 1300px) {
+    margin: initial;
+    max-width: 400px;
+  }
+
   @media (prefers-color-scheme: dark) {
     background-color: var(--clr-black-halo);
   }
@@ -285,13 +280,6 @@ input[type="checkbox"]:active {
     margin-bottom: 20px;
     gap: 0.5rem;
     overflow: auto;
-  }
-
-  @media screen and (min-width: 1300px) {
-    & {
-      margin: initial;
-      max-width: 400px;
-    }
   }
 
   .pizza-cart-item {
@@ -393,10 +381,18 @@ input[type="checkbox"]:active {
   border-radius: var(--border-radius);
 
   @media (prefers-color-scheme: dark) {
-    & {
-      background-color: var(--clr-black-sheep);
-      color: var(--clr-white);
-    }
+    background-color: var(--clr-black-sheep);
+    color: var(--clr-white);
+  }
+
+  @media screen and (min-width: 855px) {
+    max-width: 85%;
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 600px;
+  }
+  @media screen and (min-width: 1400px) {
+    max-width: 800px;
   }
 
   &::backdrop {
@@ -424,26 +420,9 @@ input[type="checkbox"]:active {
 
     .dialog-body {
       overflow-y: auto;
-      padding-block: 1rem;
-      padding-inline: 1rem;
+      padding: 1rem;
       display: flex;
       flex-direction: column;
-    }
-  }
-
-  @media screen and (min-width: 855px) {
-    & {
-      max-width: 85%;
-    }
-  }
-  @media screen and (min-width: 1200px) {
-    & {
-      max-width: 600px;
-    }
-  }
-  @media screen and (min-width: 1400px) {
-    & {
-      max-width: 800px;
     }
   }
 }
@@ -454,30 +433,24 @@ input[type="checkbox"]:active {
   grid-gap: 2px;
 
   @media screen and (min-width: 360px) {
-    & {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media screen and (min-width: 700px) {
-    & {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-    }
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
   }
 
   @media screen and (min-width: 1200px) {
-    & {
-      grid-template-columns: repeat(3, 0.25fr);
-      grid-template-rows: repeat(4, 1fr);
-    }
+    grid-template-columns: repeat(3, 0.25fr);
+    grid-template-rows: repeat(4, 1fr);
   }
 
   .toping-list-item {
     display: flex;
     align-items: center;
 
-    & input[type="checkbox"] {
+    input[type="checkbox"] {
       width: 16px;
       height: 16px;
     }
