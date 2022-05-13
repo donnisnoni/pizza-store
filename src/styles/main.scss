@@ -486,6 +486,10 @@ input[type="checkbox"]:active {
   margin-top: 1rem;
 }
 
+.disable-scroll-y {
+  overflow-y: hidden;
+}
+
 .footer {
   text-align: center;
   margin-top: 5rem;

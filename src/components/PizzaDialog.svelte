@@ -22,6 +22,7 @@
     // @ts-ignore
     dialog.showModal();
     dialog.querySelector(".dialog-body").scrollTop = 0;
+    document.body.classList.add("disable-scroll-y");
   }
 
   export function close(): void {
@@ -37,6 +38,7 @@
   function onClose() {
     selectedTopingsId = [];
     amount = 1;
+    document.body.classList.remove("disable-scroll-y");
   }
 
   function onClick(event: MouseEvent) {
