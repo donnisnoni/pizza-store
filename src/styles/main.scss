@@ -402,7 +402,7 @@ input[type="checkbox"]:active {
   .dialog {
     display: flex;
     flex-direction: column;
-    max-height: 60vh;
+    max-height: 80vh;
 
     & > * {
       padding-inline: 0.7rem;
