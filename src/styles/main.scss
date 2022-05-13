@@ -29,13 +29,17 @@
   --button-primary-hover-bg-clr: var(--clr-c64-purple);
   --pizza-cart-hover-shadow-clr: var(--clr-gold-black);
   --border-clr: var(--clr-white-edgar);
+  --scrollbar-bg-clr: var(--clr-white-edgar);
+  --scrollbar-thumb-clr: hsl(0, 0%, 75%);
 
   @media (prefers-color-scheme: dark) {
     --box-shadow-clr: var(--clr-alpha-gray);
     --pizza-cart-hover-shadow-clr: var(--clr-alpha-gray);
     --border-clr: var(--clr-black-halo);
-    // Rename this color later
-    --button-primary-bg-clr: hsl(300deg 11% 46%);
+    --button-primary-bg-clr: hsl(300deg 11% 46%); // Rename this color later
+
+    --scrollbar-bg-clr: hsl(300, 11%, 11%);
+    --scrollbar-thumb-clr: hsl(0, 0%, 20%);
   }
 }
 
@@ -43,6 +47,19 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-bg-clr);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-clr);
+  border-radius: 3px;
 }
 
 body {
