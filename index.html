@@ -130,6 +130,17 @@
     <!-- Meta Tags Generated via https://www.opengraph.xyz -->
 
     <script defer>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("./sw.js")
+          .then((e) => {
+            console.log("Service worker has successfully registered");
+          })
+          .catch((err) => {
+            console.error("Failed to register service worker", err);
+          });
+      }
+
       document.addEventListener("DOMContentLoaded", function () {
         var lazyloadImages = document.querySelectorAll("img.lazy");
         var lazyloadThrottleTimeout;
