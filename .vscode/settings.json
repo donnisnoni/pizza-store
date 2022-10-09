@@ -1,0 +1,8 @@
+{
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "[typescript][javascript][scss][html][json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
