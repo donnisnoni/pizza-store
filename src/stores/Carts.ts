@@ -1,5 +1,6 @@
 import type Pizza from "src/constants/Pizza";
-import { Writable, writable } from "svelte/store";
+import type { Writable } from "svelte/store";
+import { writable } from "svelte/store";
 
 const lsNamespace: string = "carts";
 
