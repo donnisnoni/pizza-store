@@ -43,7 +43,7 @@
 </div>
 
 <footer class="footer">
-  Developed with ❤️ by <a target="_blank" href="https://github.com/donnisnoni">
-    Don Alfons Nisnoni
+  Developed with ❤️ by <a target="_blank" href="https://github.com/itsdonnix">
+    Don Alfons
   </a>
 </footer>

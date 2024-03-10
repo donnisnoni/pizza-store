@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/web-manifest.json",
-  "id": "com.donnisnoni.app.pizza_store",
+  "id": "com.itsdonnix.app.pizza_store",
   "name": "Pizza Store",
   "short_name": "Pizza Store",
   "display": "fullscreen",
