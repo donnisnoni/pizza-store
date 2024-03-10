@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:deploy": "vite build --base=https://donnisnoni.github.io/pizza-store",
+    "build:deploy": "vite build --base=https://itsdonnix.github.io/pizza-store",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
